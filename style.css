@@ -52,10 +52,10 @@ a {
 }
 
 
-#blog_Box_Style{
+#blog_Box_Style0, #blog_Box_Style1, #blog_Box_Style2,#blog_Box_Style3,#blog_Box_Style4,#blog_Box_Style5{
    /* box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);*/
 
-    box-shadow: 0 2px 4px rgb(207, 170, 207), 0 8px 16px rgb(241, 179, 231 );
+    box-shadow: 0 2px 4px rgb(207, 170, 207), 0 8px 16px rgb(236, 134, 219);
     border: 1px solid transparent;
     border-radius: 20px;
     width: 200px;
@@ -63,8 +63,40 @@ a {
     text-align: center;
     margin: 50px;
     padding: 10PX;
+}
+#blog_Box_Style0{
 
-
+  box-shadow: 0 2px 4px rgb(207, 170, 207), 0 8px 16px rgb(236, 134, 219);
+  background-color: rgb(248, 175, 232);
 
 }
 
+
+#blog_Box_Style1{
+  box-shadow: 0 2px 4px rgb(182, 230, 180), 0 8px 16px rgb(74, 221, 135);
+  background-color: rgb(181, 243, 176);
+
+}
+
+#blog_Box_Style2{
+  box-shadow: 0 2px 4px rgb(185, 234, 238), 0 8px 16px rgb(59, 200, 224);
+background-color: rgb(127, 233, 233);
+}
+
+#blog_Box_Style3{
+  box-shadow: 0 2px 4px rgb(245, 209, 185), 0 8px 16px rgb(226, 137, 96);
+  background-color:rgb(238, 159, 107);
+
+}
+
+#blog_Box_Style4{
+  box-shadow: 0 2px 4px rgb(175, 184, 124), 0 8px 16px rgb(236, 252, 99);
+  background-color: rgb(233, 233, 118);
+
+}
+
+#blog_Box_Style5{
+  box-shadow: 0 2px 4px rgb(233, 160, 166), 0 8px 16px rgb(235, 84, 57);
+background-color:rgb(247, 132, 112);
+
+}
