@@ -28,6 +28,10 @@ ul {
   border: 1px solid transparent;
   
 }
+ 
+a {
+    text-decoration: none;
+}
 
 .blog-boxes{
 
@@ -49,6 +53,7 @@ ul {
     text-align: center;
     margin: 50px;
     padding: 10PX;
+
 
 
 }
