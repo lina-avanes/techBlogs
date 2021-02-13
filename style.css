@@ -24,6 +24,9 @@ ul {
 .nav-bar{
  display: flex;
   justify-content: center;
+  box-shadow: 0 2px 4px rgb(207, 170, 207), 0 8px 16px rgb(241, 179, 231 );
+  border: 1px solid transparent;
+  
 }
 
 .blog-boxes{
