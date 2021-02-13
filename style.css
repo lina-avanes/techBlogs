@@ -21,28 +21,30 @@ ul {
   }
   
 .nav-bar{
-    width: fit-content;
-    margin: auto;
-    margin-top: 35px;
+ display: flex;
+  justify-content: center;
 }
 
 .blog-boxes{
 
-    margin: auto;
-    width: 50%;
- 
-    padding: 10px;
-    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
 }
 
 
-#blog0, #blog1, #blog2, #blog3, #blog4{
-    border: 1px solid black;
+#blog_Box_Style{
+   /* box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);*/
+
+    box-shadow: 0 2px 4px rgb(207, 170, 207), 0 8px 16px rgb(241, 179, 231 );
+    border: 1px solid transparent;
     border-radius: 20px;
     width: 200px;
     height: 200px;
     text-align: center;
-   display: inline-block;
-   margin: 50px;
- 
+    margin: 50px;
+
+
 }
+
