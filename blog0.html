@@ -52,17 +52,18 @@
                     </div> <br><br>
 
 
-            </div> <br><br><br>
+            </div> <br><br>
 
 
             <!-- --------------STEP 2------------- -->
 
             <div class="step2">
                 <p ><strong style="color: rgb(222, 82, 235);">Step 2: </strong> 
-                    Create the ansible playbook file    <br><br> <br>
+                    Create the ansible playbook file    <br><br> 
                
                 The second file "tasks.yml" will contain all the commands/tasks that will be executed on the EC2 instance. <br><br> 
-                           
+           
+               
                 <div class="file2">
                   <code>
                     ---<br>
@@ -75,8 +76,24 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state: present<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;become: true <br>
                 </code>
-                </div>
 
+
+
+                
+                </div> 
+                <br>
+                <strong>The code explained</strong>
+                <p >[ - - - ] &rarr; The first three dashes will always be included in a playbook file <br>
+                    [ - hosts: we_server] &rarr; “tasks.yml” is going to look in the web_server block  in the “hosts.ini” file and when
+                     it executes, it will run against any host that located in that block.<br>
+                     [tasks] &rarr;list of tasks<br>
+                     [- name: Install required packages]&rarr; Name of the tasks<br>
+                     [apt] &rarr; Use the apt module since the EC2 is an Ubuntu machine <br>
+                     [name: - apache2]&rarr; Names of the packages that need to be installed  <br>
+                     [State: present] &rarr;Checks to see if the packages have already been installed on the host or not <br>
+                     [become: true] &rarr;Run as root
+                   </p>
+    
 
             </div>
 
