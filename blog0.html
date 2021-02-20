@@ -48,7 +48,21 @@
                     </div> <br><br>
 
                     
-                    The second file will contain all the commands that will be executed on the EC2 instance.  
+                    The second file will contain all the commands/tasks that will be executed on the EC2 instance. <br><br> 
+                           
+                    <div class="file2">
+                      <code>
+                        ---<br>
+                        - hosts: web_server <br>
+                        &nbsp;&nbsp;tasks: <br>
+                        &nbsp;&nbsp; &nbsp;- name: Install required packages<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;apt:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- apache2<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state: present<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;become: true <br>
+                    </code>
+                    </div>
 
 
 
