@@ -37,8 +37,10 @@
                 <p ><strong style="color: rgb(222, 82, 235);">Step 1: </strong> 
                     Create the Ansible Files  <br><br> <br>
                     In order to install apache, you will need two files. The first file will keep the IP address(s) 
-                    of the EC2 instance. The file is called "hosts.ini". The file will contain the command 
-                    [Web_server] and the IP addresses(s).<br><br>
+                    of the EC2 instance. In another words, we wil be creating an Ansible inventory file.
+                     The file will define the hosts upon which tasks and commands in a playbook 
+                    operate. The inventory file can have an individual hosts or groups of hosts. In this example, I have included
+                     a single host.<br><br>
                     An example of hosts.ini file: 
                     
                     <div class="file">
