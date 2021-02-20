@@ -1,0 +1,36 @@
+.blog0-div{
+    margin: auto;
+    width: 50%;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background: rgb(242, 222, 245);
+    padding: 30px;
+}
+
+
+#title{
+    font-size: 22px;
+}
+
+.step1, .step2{
+
+    background: rgb(32, 32, 30);
+  color: rgb(255, 255, 255);  
+  border-radius: 10px;
+  padding: 20px;
+
+}
+
+
+a {
+    color: aqua;
+}
+
+.file{
+
+    width: 100px;
+    background: rgb(224, 229, 170);
+    color: black;
+    border-radius: 10px;
+    padding: 20px
+}
