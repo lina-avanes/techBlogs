@@ -44,3 +44,9 @@ a {
     padding: 20px
 }
 
+button {
+    background: black;
+    border-radius: 20px;
+    padding: 10px;
+    
+}
