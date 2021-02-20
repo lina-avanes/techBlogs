@@ -35,13 +35,15 @@
           <!-- --------------STEP 1------------- -->
              <div class="step1">
                 <p ><strong style="color: rgb(222, 82, 235);">Step 1: </strong> 
-                    Create the Ansible Files  <br><br> <br>
-                    In order to install apache, you will need two files. The first file will keep the IP address(s) 
-                    of the EC2 instance. In another words, we wil be creating an Ansible inventory file.
-                     The file will define the hosts upon which tasks and commands in a playbook 
+                    Create the hosts file     <br><br> <br>
+                    In order to install apache, we will need two files. The first file will keep the IP address(s) 
+                    of the EC2 instance. In another words, we wil be creating an <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">
+                         Ansible inventory file</a>.
+                     The inventory file called "hosts.ini" will define the hosts upon which tasks and commands in a playbook 
                     operate. The inventory file can have an individual hosts or groups of hosts. In this example, I have included
                      a single host.<br><br>
                     An example of hosts.ini file: 
+                    
                     
                     <div class="file">
                      <code>[Web_server]<br>
@@ -49,33 +51,32 @@
                     </code>
                     </div> <br><br>
 
-                    
-                    The second file will contain all the commands/tasks that will be executed on the EC2 instance. <br><br> 
-                           
-                    <div class="file2">
-                      <code>
-                        ---<br>
-                        - hosts: web_server <br>
-                        &nbsp;&nbsp;tasks: <br>
-                        &nbsp;&nbsp; &nbsp;- name: Install required packages<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;apt:<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name:<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- apache2<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state: present<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;become: true <br>
-                    </code>
-                    </div>
 
-
-
-            </div> <br>
-
+            </div> <br><br><br>
 
 
             <!-- --------------STEP 2------------- -->
 
             <div class="step2">
-             THIS BLOG IS NOT COMPLETE YET
+                <p ><strong style="color: rgb(222, 82, 235);">Step 2: </strong> 
+                    Create the ansible playbook file    <br><br> <br>
+               
+                The second file "tasks.yml" will contain all the commands/tasks that will be executed on the EC2 instance. <br><br> 
+                           
+                <div class="file2">
+                  <code>
+                    ---<br>
+                    - hosts: web_server <br>
+                    &nbsp;&nbsp;tasks: <br>
+                    &nbsp;&nbsp; &nbsp;- name: Install required packages<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;apt:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- apache2<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state: present<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;become: true <br>
+                </code>
+                </div>
+
 
             </div>
 
