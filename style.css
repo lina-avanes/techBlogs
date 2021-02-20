@@ -12,6 +12,8 @@ ul {
   li {
     float: left;
   }
+
+
   
   li a {
     display: block;
@@ -19,11 +21,8 @@ ul {
     text-align: center;
     padding: 14px 40px;
     text-decoration: none;
-
-    /* box-shadow: 0 2px 4px rgb(179, 178, 179), 0 8px 16px rgb(255, 247, 247);
-  border: 1px solid transparent; */
-  margin: 5px 20px;
-  border-radius: 20px;
+    margin: 5px 20px;
+   border-radius: 20px;
 
   }
 
