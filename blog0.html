@@ -83,15 +83,15 @@
                 </div> 
                 <br>
                 <strong>The code explained</strong>
-                <p >[ - - - ] &rarr; The first three dashes will always be included in a playbook file <br>
-                    [ - hosts: we_server] &rarr; “tasks.yml” is going to look in the web_server block  in the “hosts.ini” file and when
-                     it executes, it will run against any host that located in that block.<br>
-                     [tasks] &rarr;list of tasks<br>
-                     [- name: Install required packages]&rarr; Name of the tasks<br>
-                     [apt] &rarr; Use the apt module since the EC2 is an Ubuntu machine <br>
-                     [name: - apache2]&rarr; Names of the packages that need to be installed  <br>
-                     [State: present] &rarr;Checks to see if the packages have already been installed on the host or not <br>
-                     [become: true] &rarr;Run as root
+                <p >[ - - - ] &rarr;&nbsp; The first three dashes will always be included in a playbook file <br>
+                    [ - hosts: we_server] &rarr;&nbsp; “tasks.yml” is going to look in the web_server block  in the “hosts.ini” file and when
+                     it executes, it will run against any host(s) that is located in that block.<br>
+                     [tasks] &rarr;&nbsp;list of tasks<br>
+                     [- name: Install required packages]&rarr;&nbsp; Name of the tasks<br>
+                     [apt] &rarr;&nbsp; Use the apt module since the EC2 is an Ubuntu machine <br>
+                     [name: - apache2]&rarr;&nbsp; Names of the packages that need to be installed  <br>
+                     [State: present] &rarr;&nbsp;Checks to see if the packages have already been installed on the host or not <br>
+                     [become: true] &rarr;&nbsp;Run as root
                    </p>
     
 
