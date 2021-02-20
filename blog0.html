@@ -21,9 +21,9 @@
 
     <div class="blog0-div">
 
-       <strong id="title"> Installing Apache on an AWS EC2 instance via Ansible  </strong>
+       <strong id="title"> Installing Apache2 on an AWS EC2 instance via Ansible  </strong>
        <br><br>
-       <p>Installing Apache via Ansible on an AWS EC2 instance may seem like a complicated task; 
+       <p>Installing Apache2 via Ansible on an AWS EC2 instance may seem like a complicated task; 
            however, it is not. In today’s blog, I will demonstrate the steps needed in order to 
            complete this task.<br><br>
           <strong> Prerequisites: </strong> 
@@ -36,7 +36,7 @@
              <div class="step1">
                 <p ><strong style="color: rgb(222, 82, 235);">Step 1: </strong> 
                     Create the hosts file     <br><br> <br>
-                    In order to install apache, we will need two files. The first file will keep the IP address(s) 
+                    In order to install apache2, we will need two files. The first file will keep the IP address(s) 
                     of the EC2 instance. In another words, we wil be creating an <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">
                          Ansible inventory file</a>.
                      The inventory file called "hosts.ini" will define the hosts upon which tasks and commands in a playbook 
@@ -95,9 +95,23 @@
                    </p>
     
 
+            </div> <br><br>
+
+            <div class="step3">
+                <p ><strong style="color: rgb(222, 82, 235);">Step 3: </strong> 
+                Run both files   <br><br> 
+               
+               <p>Now that we have both our files, we will go ahead and run the using the command below:</p><br>
+
+               <code> > Ansible-playbook –i hosts.ini tasks.yml –u Ubuntu –key-file ~/key-file-path
+
+            </code>
+              
+
             </div>
 
     <br>
+     <p>And that is how you install Apache2 on an AWS EC2 instance via Ansible</p>
     </div>
 
 </body>
