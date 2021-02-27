@@ -20,7 +20,7 @@
     
 
     <div class="blog1-div">
-
+<br><br>
        <strong id="title"> Launching 2 AWS EC2 Instances in 2 Different Availability Zones via Terraform   </strong>
    
             <p>Terraform is an “infrastructure as code” tool similar to AWS CloudFormation that allows you to 
@@ -39,7 +39,7 @@
 
 
             <div class="step1">
-                <p ><strong style="color: rgb(222, 82, 235);">Step 1: </strong> 
+                <p ><strong style="color: rgb(47, 185, 93);">Step 1: </strong> 
                     <p>In the first portion of the terraform code, we need to specify who the provider is. Providers in
                          terraform are responsible for communicating with different APIs. <br><br> <br>In the first portion of the terraform code,
                           we need to specify who the provider is. Providers in terraform are responsible for communicating with
@@ -102,7 +102,7 @@
     </div> <br><br>
 
     <div class="step2">
-        <p ><strong style="color: rgb(222, 82, 235);">Step 2: </strong> <br>
+        <p ><strong style="color: rgb(47, 185, 93);">Step 2: </strong> <br><br>
             The second step is to create two EC2 instances and connect them to the two regions that we created in step 1. <br><br>
             First we need to create an AWS instance resources. In AWS, a resources is an entity that you can work with. For example EC2 Instances.
             So we will type “resource” and then specify what the recourse is which is an “aws_instacne” and we can name the resource. I will name the resource “EC2-1”.
@@ -123,7 +123,7 @@
 
 
                 Lastly we will assign one of the two created regions to the EC2 instance .<br>
-                <code style="color: aquamarine;">resource "aws_instance" "EC2-1"{ <br>
+                <code style="color: rgb(104, 190, 133);">resource "aws_instance" "EC2-1"{ <br>
                     ami           = "ami-03d315ad33b9d49c4"<br>
                     instance_type = "t2.micro"<br>
                     provider = aws.region1<br>
@@ -193,20 +193,22 @@
       </code> <br><br><br>
     </div> <br><br>
     <div class="cmd">
-        <p ><strong style="color: rgb(222, 82, 235);">Step 3: </strong> <br>
+        <p ><strong style="color: rgb(47, 185, 93);">Step 3: </strong>  <br><br>
         In order to apply the changes run the following commands in a shell<br> <br>
-<code>
+<code  style="color: aquamarine;">
     terraform init <br>
     terraform plan <br>
     terraform apply <br>
 </code> <br><br>
 
 To destroy do: <br><br>
-<code>terraform destroy</code>
- 
-        </div>
-    
+<code  style="color: aquamarine;">terraform destroy</code>
 
+        </div>
+        <br> <br>
+
+        <button><a href="index.html"> Go Back </a></button>
+        <button><a href="blog1.html"> Top</a></button>
 
 </body>
 </html>
