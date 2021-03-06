@@ -4,7 +4,7 @@
     min-width: 400px;
     border: 1px solid transparent;
     border-radius: 20px;
-    background: rgb(202, 240, 202);
+    background: rgb(206, 240, 250);
     padding: 30px;
 }
 
@@ -13,8 +13,10 @@
   
  
   position: relative;
- padding-left: 10%;
- padding-right: 10%;
-    width: 80%;
-   
+
+
+
+width: 60%;
+
+
 }
