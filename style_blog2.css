@@ -14,3 +14,15 @@
 position: relative;
 width: 60%;
 }
+
+
+button {
+    background: rgb(135, 233, 225);
+    border-radius: 20px;
+    padding: 10px;
+    
+
+    text-decoration: none;
+
+    
+}
