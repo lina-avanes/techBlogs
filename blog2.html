@@ -38,6 +38,17 @@
      <img id="plan2"  src="assets/plan-3.jpg">
      <br><br><br>
 
+
+     <p> &#10132; A single EC2 instance will be placed in each subnet. The EC2 instances in the private 
+         subnets will be where the website will be hosted from. The EC2 instances placed in the public subnet
+          will act as bastion host. So my  group and I will SSH into the EC2 in the publics subnet and then 
+          from there we will SSH into the EC2 in the private subnet. A NAT gateway will also be placed in the 
+          public subnet. Through the NAT Gateway the private EC2 instances will be able to connect to the internet
+           but users from outside cannot initiate any type of connection to the private subnets.  </p>
+     <img id="plan3"  src="assets/plan-4.jpg">
+     <br><br><br>
+
+
 </div>
  
 </body>
