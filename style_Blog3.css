@@ -1,0 +1,28 @@
+.blog3-div{
+    margin: auto;
+    width: 50%;
+    min-width: 400px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background: rgb(248, 210, 166);
+   
+    padding: 30px;
+}
+
+
+#plan1 , #plan2 , #plan3 {
+position: relative;
+width: 60%;
+}
+
+
+button {
+    background: rgb(135, 233, 225);
+    border-radius: 20px;
+    padding: 10px;
+    
+
+    text-decoration: none;
+
+    
+}
