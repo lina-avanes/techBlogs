@@ -26,3 +26,12 @@ button {
 
     
 }
+
+.code_sections{
+    width: 300px;
+    background: rgb(245, 255, 226);
+    color: black;
+    border-radius: 10px;
+    padding: 20px
+
+}

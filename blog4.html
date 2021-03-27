@@ -22,13 +22,60 @@
 
    
 <div class="blog4-div">
+
     <strong> <br>AWS Infrastructure Creation via Terraform for CIT Design project – Part 2 (Public & Privet Subnets)</strong> <br><br>
     In today’s blog, I will continue with the part two of the “AWS Infrastructure Creation via Terraform for CIT Design project” series. In this step,
-     I will demonstrate how to create two public and two private subnets in two different availability zones using Terraform.
+     I will demonstrate how to create two public and two private subnets in two different availability zones using Terraform. <br><br><br>
 
+
+     <p ><strong style="color: rgb(113, 48, 119);">Step 1: Creating the public subnets</strong> <br>
+
+     In order to create subnets <code> resource "aws_subnet"</code> is going to be used. I will name the variable <code> "public_subnet1" </code>. Next, 
+     the cidr block will be indicated using <code> cidr_block  = "10.0.1.0/24" </code> This subnet will be created with the VPC which I created in 
+     <a href="blog3.html"> blog3 </a>using the following line of code <code> vpc_id  = aws_vpc.main_VPC.id </code>. Next, <code> map_public_ip_on_launch = true </code> will 
+     Indicate whether instances launched in this subnet receive a public IPv4 address. <code> availability_zone       = "us-west-2a" </code> will
+      specify its availability zone. 
     
+      <br><br>
+ 
+      <div class="code_sections">
+        <code>resource "aws_subnet" "public_subnet1" { <br><br>
+ 
+            cidr_block              = "10.0.1.0/24"<br>
+            vpc_id                  = aws_vpc.main_VPC.id<br>
+            map_public_ip_on_launch = true<br>
+            availability_zone       = "us-west-2a"<br><br>
+          
+          
+              tags = {<br>
+                  Name = "public_subnet_1"<br>
+                  &nbsp; &nbsp; &nbsp; }<br>
+          }<br>
+          
+        </code>
+
+        
+        </div> <br><br>
+        The same lines of code will be used to create the second public subnet; however, it will have different variable name, tag name, and availability zone.  <br><br>  
+        <div class="code_sections">
+            <code>resource "aws_subnet" "private_subnet1" {<br><br>
+ 
+                cidr_block              = "10.0.3.0/24"<br>
+                vpc_id                  = aws_vpc.main_VPC.id<br>
+                map_public_ip_on_launch = true<br>
+                availability_zone       = "us-west-2a"<br>
+              
+              
+                  tags = {<br>
+                      Name = "private_subnet_1"<br>
+                      &nbsp; &nbsp; &nbsp; }<br>
+              }<br>
+              
+            </code>
 
     <br><br>
+
+    
      <button><a href="index.html"> Go Back </a></button>
      <button><a href="blog1.html"> Top</a></button>
       
