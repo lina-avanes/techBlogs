@@ -23,7 +23,76 @@
    
 <div class="blog3-div">
     <strong> <br>AWS Infrastructure Creation via Terraform for CIT Design project – Part 1 (Creating VPC & Intenet Gateway)</strong>
+    <p>In my previous blog, I explained the design of the infrastructure that my group and I are planning to use for our senior 
+        design project. We have decided to create the entire infrastructure via terraform. In today’s blog, I will go over the
+         first step which is how to create the VPC and attach an internet gateway to it via terraform.  </p> <br><br>
 
+
+         <div class="step1">
+            <p ><strong style="color: rgb(113, 48, 119);">Step 1: Provider & data</strong> <br>
+                Before creating the VPC, the provider must be implemented. A Terraform Provider represents an integration that 
+                is responsible for understanding API interactions with the underlying infrastructure, such as a public cloud 
+                service (AWS, GCP, Azure), a PaaS service (Heroku), a SaaS service (DNSimple, CloudFlare), or on-prem resources 
+                (vSphere). In this case the provider would be “AWS”.  <br><br>
+                
+
+                 In this example, the provider is "aws". The region in which our 
+                 infrastructure will be present is “us-west-2”. access_key and secret_key are also needed.They act as credentials and
+                  connect to your AWS account. Learn how to get your keys <a href="https://www.youtube.com/watch?v=JvtmmS9_tfU">here.</a> <br><br>
+                  "data "aws_availability_zones" "all" {}" Will give access to all the availability zones in the “us-west-2” region. <br>
+
+                  <div class="code_sections">
+                <code>provider "aws" { <br>
+                    region = "us-west-2" <br>
+                    access_key = "insert key here" <br>
+                    secret_key = "insert key here"<br>
+                  }<br><br>
+                
+                  data "aws_availability_zones" "all" {}
+                </code>
+                </div> <br><br>
+                <p ><strong style="color: rgb(113, 48, 119);">Step 2: VPC </strong> <br>
+                    In order to create the VPC, the resource “aws_vpc” is going to be used. The variable name of the VPC which is going to be used for 
+                    programming is “main_VPC”. <code> cidr_block = "10.0.0.0/16" </code>will be used to indicate the cidr block. <code>enable_dns_hostnames = true</code> and <code> enable_dns_support = true</code>
+                 are set to true and this is to enable default hostname. <br>
+
+
+                    <div class="code_sections">
+
+                   <code>resource "aws_vpc" "main_VPC" { <br>
+ 
+                    cidr_block = "10.0.0.0/16"<br>
+                    enable_dns_hostnames = true<br>
+                    enable_dns_support = true<br><br>
+                  
+                    tags={<br>
+                        Name = "RUNCMD-VPC"<br>
+                        &nbsp; &nbsp; &nbsp;   }<br>
+                          }<br>
+                
+                  </code> </div> <br><br>
+
+
+                  <p ><strong style="color: rgb(113, 48, 119);">Step 3: Intenet Gateway </strong> <br>
+                    Finally <code> resource "aws_internet_gateway"</code> will be used to create a gateway. <code> vpc_id = aws_vpc.main_VPC.id</code>
+                     will attach the gateway to the VPC created in step 2.
+                    <div class="code_sections">
+                    <code>
+                        resource "aws_internet_gateway" "gw"{<br>
+
+                           
+                            vpc_id = aws_vpc.main_VPC.id<br>
+                        
+                            tags ={<br>
+                                Name = "RUNCMD_Gateway"<br>
+                                &nbsp; &nbsp; &nbsp;  }<br>
+                        }
+                        
+                    </code> </div>
+                </div> <br><br>
+
+
+               
     
 
     <br><br>
