@@ -56,30 +56,69 @@
 
         
         </div> <br><br>
-        The same lines of code will be used to create the second public subnet; however, it will have different variable name, tag name, and availability zone.   
+        The same lines of code will be used to create the second public subnet; however, it will have different variable name, tag name, and availability zone.   <br><br>
         <div class="code_sections">
-            <code>resource "aws_subnet" "private_subnet1" {<br><br>
+            <code>resource "aws_subnet" "public_subnet2" {<br><br>
  
-                cidr_block              = "10.0.3.0/24"<br>
+                cidr_block              = "10.0.2.0/24"<br>
                 vpc_id                  = aws_vpc.main_VPC.id<br>
                 map_public_ip_on_launch = true<br>
-                availability_zone       = "us-west-2a"<br>
+                availability_zone       = "us-west-2b"<br>
               
               
                   tags = {<br>
-                      Name = "private_subnet_1"<br>
+                      Name = "public_subnet_2"<br>
                       &nbsp; &nbsp; &nbsp; }<br>
               }<br>
               
             </code>
 
     <br><br>
+  
+      
+</div> <br><br>
+<p ><strong style="color: rgb(113, 48, 119);">Step 2: Creating the private subnets</strong> <br> <br>
+    The same logic will be applied to create the private subnets. 
+
+    <div class="code_sections">
+        <code>resource "aws_subnet" "private_subnet1" {<br><br>
+ 
+            cidr_block              = "10.0.3.0/24"<br>
+            vpc_id                  = aws_vpc.main_VPC.id<br>
+            map_public_ip_on_launch = true<br>
+            availability_zone       = "us-west-2a"<br><br>
+          
+          
+              tags = {<br>
+                  Name = "private_subnet_1"<br>
+                  &nbsp; &nbsp; &nbsp;     }<br>
+          }<br>
+          
+        </code> </div> <br><br>
+
+        <div class="code_sections">
+            <code>resource "aws_subnet" "private_subnet2" {<br><br>
+ 
+                cidr_block              = "10.0.4.0/24"<br>
+                vpc_id                  = aws_vpc.main_VPC.id<br>
+                map_public_ip_on_launch = true<br>
+                availability_zone       = "us-west-2b"<br><br>
+              
+              
+                  tags = {<br>
+                      Name = "private_subnet_2"<br>
+                      &nbsp; &nbsp; &nbsp; }<br>
+              }<br>
+            </code> </div>
+    
+
+
 
     
      
-      
-</div>
- <br><br><button><a href="index.html"> Go Back </a></button>
+<br><br>
+
+ <button><a href="index.html"> Go Back </a></button>
      <button><a href="blog1.html"> Top</a></button>
 
 </body>
