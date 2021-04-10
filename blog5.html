@@ -31,6 +31,14 @@
 
 }
 
+button {
+    background: rgb(153, 71, 71);
+    border-radius: 20px;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
 </style>
 <body>
     
@@ -79,19 +87,40 @@
                     }<br>
                     }<br>
             </code>
-        </div> <br><br>
+        </div> <br><br><br>
      
 
         <p ><strong style="color: rgb(102, 41, 5); font-size: 20px;">Step 2: Creating the private route table</strong> <br>
 
 
+            <p>By default, the private route table has been created for us by AWS.  Therefore, all I have to do is attach the private route table to my VPC.  
+                In order to attach the private/default  route table  to the VPC, the resource <code> "aws_default_route_table" </code> needs to be used. 
+                The name of the variable will be <code> "private_route" </code>. This line of code <code> default_route_table_id = aws_vpc.main_VPC.default_route_table_id </code>
+                 will attach the route table to the VPC.   </p>
+
+            
+        <div class="code_sections">
+            <code>
+                resource "aws_default_route_table" "private_route" {<br>
+                    default_route_table_id = aws_vpc.main_VPC.default_route_table_id<br><br>
+                    tags = {<br>
+                    Name = "Private_RouteTable"<br>
+                    }<br>
+                    }
+            </code>
+        </div> <br><br>
+
+            <p>In my next blog, I will demonstrate how to associate the public route table to the public subnet and how to associate the private rout table to the private subnets.</p>
+
+
+            <button><a href="index.html"> Go Back </a></button>
+            <button><a href="blog1.html"> Top</a></button>
+    
     </div> <br><br>
 
               
 
-<!-- <br>
-        <button><a href="index.html"> Go Back </a></button>
-        <button><a href="blog1.html"> Top</a></button> -->
-
+<br>
+    
 </body>
 </html>
