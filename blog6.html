@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Blog 6</title>
+</head>
+<style>
+
+.blog5-div{
+    margin: auto;
+    width: 50%;
+    min-width: 450px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background: rgb(243, 173, 173);
+   
+    padding: 30px;
+}
+
+
+.code_sections{
+    width: 400px;
+    background: rgb(209, 209, 204);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 20px
+
+}
+
+button {
+    background: rgb(241, 139, 139);
+    border-radius: 20px;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
+</style>
+<body>
+    
+    <div class="nav-bar">
+        <ul>
+            <li><a href="index.html"> Home </a></li>
+            <li><a href="about.html"> About </a></li>
+            <li><a href="https://github.com/lina-avanes/techBlogs"> Github </a></li>
+        </ul>
+    </div> <br><br>
+    
+
+    <div class="blog5-div">
+<br><br>
+       <strong id="title"> AWS Infrastructure Creation via Terraform for CIT Design project – Part 4 (Public & Privet Route Tables Association )
+    </strong>
+   <p>In today’s blog, I will demonstrate how to associate the public and private route tables created in blog 5 to the public and private subnets. </p> <br>
+
+
+
+
+
+
+    <p ><strong style="color: rgb(102, 41, 5); font-size: 20px;">Step 1: Associating both public subnets with the public route table </strong> <br>
+        <p>In order to associate the public route table to the first public subnet, the resource <code> "aws_route_table_association" </code>  will be used. 
+             By using this line of code <code> route_table_id = aws_route_table.public_route.id </code> I will specify which route table will be used. 
+             The route table specified here is the public route table that I created in blog 5. Next, I will specify the subnet that I need the route table 
+             to be associated with by using <code> subnet_id = aws_subnet.public_subnet1.id </code> </p>
+       
+        
+        <div class="code_sections">
+            <code>
+             
+                resource "aws_route_table_association" "public_subnet_assoc1" {<br><br>
+               
+                route_table_id = aws_route_table.public_route.id<br><br>
+               
+            
+                subnet_id = aws_subnet.public_subnet1.id<br><br>
+               
+             
+                depends_on = [aws_route_table.public_route, aws_subnet.public_subnet1]<br><br>
+               
+                }
+            </code>
+        </div> <br>
+
+        <p>The same steps will be repeated to associate the 2nd public subnet.  </p>
+        <div class="code_sections">
+            <code>
+                resource "aws_route_table_association" "public_subnet_assoc2" {<br><br>
+                    route_table_id = aws_route_table.public_route.id<br><br>
+                    subnet_id = aws_subnet.public_subnet2.id<br><br>
+                    depends_on = [aws_route_table.public_route, aws_subnet.public_subnet2]<br><br>
+                    }
+            </code>
+        </div> <br>
+
+     
+
+
+         
+
+
+            <button><a href="index.html"> Go Back </a></button>
+            <button><a href="blog1.html"> Top</a></button>
+    
+    </div> <br><br>
+
+              
+
+<br>
+    
+</body>
+</html>
