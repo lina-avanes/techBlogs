@@ -95,11 +95,35 @@ button {
                     depends_on = [aws_route_table.public_route, aws_subnet.public_subnet2]<br><br>
                     }
             </code>
-        </div> <br>
-        
-        <p ><strong style="color: rgb(102, 41, 5); font-size: 20px;">Step 2: Associating both private subnets with the private route table </strong> <br><br>
-     
+        </div> <br><br><br>
 
+        <p ><strong style="color: rgb(102, 41, 5); font-size: 20px;">Step 2: Associating both private subnets with the private route table </strong> <br>
+            <p>Associating the private route table with the private subnets is the exacts same process as associating the public route table with the public subnets. 
+                The only difference is that I changes the route table ID and the subnet IDs. </p> <br>
+                <p>Associating the private route table with private subnet 1  </p>
+                <div class="code_sections">
+                    <code>
+                        resource "aws_route_table_association" "private_subnet_assoc1" {<br><br>
+                            route_table_id = aws_default_route_table.private_route.id<br><br>
+                            subnet_id = aws_subnet.private_subnet1.id<br><br>
+                            depends_on = [aws_default_route_table.private_route,<br><br>
+                            aws_subnet.private_subnet1]}<br><br>
+                    </code>
+                </div> <br><br><br>
+
+
+                <p>Associating the private route table with private subnet 2  </p>
+
+                    <div class="code_sections">
+                        <code>
+                            resource "aws_route_table_association" "private_subnet_assoc2" {<br><br>
+                                route_table_id = aws_default_route_table.private_route.id<br><br>
+                                subnet_id = aws_subnet.private_subnet2.id<br><br>
+                                depends_on = [aws_default_route_table.private_route,<br><br>
+                                aws_subnet.private_subnet2] }<br><br>
+            
+                        </code>
+                    </div> <br><br><br>
 
          
 
