@@ -1,0 +1,12 @@
+.blog5-div{
+    margin: auto;
+    width: 50%;
+    min-width: 400px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background: rgb(238, 166, 138);
+   
+    padding: 30px;
+}
+
+
