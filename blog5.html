@@ -16,11 +16,20 @@
     min-width: 400px;
     border: 1px solid transparent;
     border-radius: 20px;
-    background: rgb(238, 166, 138);
+    background: rgb(243, 180, 156);
    
     padding: 30px;
 }
 
+
+.code_sections{
+    width: 300px;
+    background: rgb(255, 205, 172);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 20px
+
+}
 
 </style>
 <body>
@@ -38,10 +47,44 @@
 <br><br>
        <strong id="title"> AWS Infrastructure Creation via Terraform for CIT Design project – Part 3 (Public & Privet Route Tables)
     </strong>
-   
+   <p>Today’s blog will be a continuation and part 3 of the “AWS Infrastructure Creation via Terraform for CIT Design project” series. Previously,
+    I created a VPC, Internet gateway and public and private subnets. However, the subnets created in blog two are neither public nor private. 
+    The reason for that is because they are not attached to their corresponding route tables. In this blog, I will demonstrate how to create the route tables.  </p>
+    <br><br>
+
+
+
+
+
+
+    <p ><strong style="color: rgb(102, 41, 5); font-size: 20px;">Step 1: Creating the public route table</strong> <br>
+        <p>In order to create a route table in AWS, the resource <code>“aws_route_table” </code>  is going to be used. 
+            <code>  “public_route” </code> is going to be the name of the variable which I will use throughout the code to refer to this route table. 
+            <code> vpc_id = aws_vpc.main_VPC.id  </code> will attach the main_vpc created in blog 3 to this route table.
+           The cidr block for the route is going to be any IP or <code> 0.0.0.0/0 </code> and it will be attached to the internet gateway for free flow of traffic in and out. 
+           </p>
+
+        <div class="code_sections">
+            <code>
+                resource "aws_route_table" "public_route"{<br>
+                vpc_id = aws_vpc.main_VPC.id<br><br>
+
+                route {<br>
+                    cidr_block = "0.0.0.0/0"<br>
+                    gateway_id = aws_internet_gateway.gw.id<br>
+                    }<br><br>
+                    
+                    tags = {<br>
+                    Name = "public_RouteTable"<br>
+                    }<br>
+                    }<br>
+            </code>
+        </div> <br><br>
      
 
-     
+        <p ><strong style="color: rgb(102, 41, 5); font-size: 20px;">Step 2: Creating the private route table</strong> <br>
+
+
     </div> <br><br>
 
               
