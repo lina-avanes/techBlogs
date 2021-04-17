@@ -68,10 +68,27 @@ button {
             vpc_id = aws_vpc.main_VPC.id<br>
             } <br>
         </code>
+    </div> <br><br>
 
-    </div>
- 
+    <p ><strong style="color: rgb(24, 112, 19); font-size: 20px;">Step 2: Security Group Rules </strong> <br>
+        <p>The first rule is for SSH. All incoming or inbound traffic will be via using SSH. In order to set a rule, 
+            the resource “aws_security_group_rule” will be used. The traffic will be coming in from port 22 and will
+             be received on port 22. The protocol is tcp.  Then the rule will be attached to the security group created in 
+             step 1 via  "security_group_id = aws_security_group.main_security_group.id" </p>
+             <div class="code_sections">
+                <code>
+                    resource "aws_security_group_rule" "ssh_inbound_access" { <br>
+                        from_port = 22 <br>
+                        to_port = 22 <br>
+                        protocol = "tcp" <br>
+                        security_group_id = aws_security_group.main_security_group.id <br>
+                        type = "ingress" <br>
+                        cidr_blocks = ["0.0.0.0/0"] <br>
+                        }
+                </code>
+            </div> <br><br>
 
+            <p>Not complete</p>
     </div> 
     <br><br>
 
