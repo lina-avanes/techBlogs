@@ -86,9 +86,36 @@ button {
                         <br>
                         }
                 </code>
-            </div> <br><br>
+            </div> <br>
 
-            <p>Not complete</p>
+            <p>The second incoming traffic rule will be for HTTP. </p>
+            <div class="code_sections">
+                <code>
+                
+                    resource "aws_security_group_rule" "http_inbound_access" {<br> 
+                    from_port = 80<br> 
+                    to_port = 80<br> 
+                    protocol = "tcp"<br> 
+                    security_group_id = aws_security_group.main_security_group.id<br> 
+                    type = "ingress"<br> 
+                    cidr_blocks = ["0.0.0.0/0"]<br> 
+                    }
+                </code>
+            </div> <br>
+
+            <p>The third rule is for all outgoing traffic. The code is written the same way as the previous rules however, this rule has different port numbers and different type. </p>
+            <div class="code_sections">
+                <code>
+                    resource "aws_security_group_rule" "all_outbound_access" {<br> 
+                        from_port = 0<br> 
+                        to_port = 0<br> 
+                        protocol = "-1"<br> 
+                        security_group_id = aws_security_group.main_security_group.id<br> 
+                        type = "egress"<br> 
+                        cidr_blocks = ["0.0.0.0/0"]<br> 
+                        }
+                </code>
+            </div> <br>
     </div> 
     <br><br>
 
