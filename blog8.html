@@ -56,6 +56,8 @@
                           instance. In order to see how “main_security_group” was created, visit  <a href="blog7.html">blog 7</a>. Finally, declare the correct availability zone by using 
                           “availability_zone = "us-east-1c" ”. Tags are optional. </p>
 
+
+                          <strong>Public instance #1 </strong> <br> <br>
                 <div class="code_sections">
                     <code>
                         
@@ -64,7 +66,7 @@
                             instance_type     = "t2.micro"<br>
                             subnet_id   = aws_subnet. public_subnet1.id<br>
                             security_groups   = [aws_security_group.main_security_group.id]<br>
-                            availability_zone = "us-east-1c"<br><br>
+                            availability_zone = "us-east-1a"<br><br>
                             &nbsp; tags = {<br>
                             	&nbsp;	&nbsp;  Name = "public1"<br>
                                 &nbsp;  }<br>
@@ -74,6 +76,7 @@
                 </div> <br>
 
                     <p>Repeated the same steps for the following instance with a different variable name, tag name, subnets, and availability zones.  </p><br>
+                    <strong>Public instance #2 </strong> <br> <br>
                     <div class="code_sections">
                         <code>
                             
@@ -89,7 +92,46 @@
                               }<br>
     
                         </code>
-                    </div> <br>
+                    </div> <br> <br> <br>
+
+                    <strong>Private instance #1 </strong> <br> <br>
+
+                    <div class="code_sections">
+                        <code>
+                            
+                            resource "aws_instance" "private1" { <br>
+                                ami               = "ami-042e8287309f5df03"<br>
+                                instance_type     = "t2.micro"<br>
+                                subnet_id   = aws_subnet.private_subnet1.id<br>
+                                security_groups   = [aws_security_group.main_security_group.id]<br>
+                                availability_zone = "us-east-1a"<br><br>
+                                &nbsp; tags = {<br>
+                                    &nbsp;	&nbsp;  Name = "private1"<br>
+                                    &nbsp;  }<br>
+                              }<br>
+    
+                        </code>
+                    </div> <br> <br> <br>
+
+                    
+                    <strong>Private instance #2 </strong> <br> <br>
+
+                    <div class="code_sections">
+                        <code>
+                            
+                            resource "aws_instance" "private2" { <br>
+                                ami               = "ami-042e8287309f5df03"<br>
+                                instance_type     = "t2.micro"<br>
+                                subnet_id   = aws_subnet.private_subnet2.id<br>
+                                security_groups   = [aws_security_group.main_security_group.id]<br>
+                                availability_zone = "us-east-1c"<br><br>
+                                &nbsp; tags = {<br>
+                                    &nbsp;	&nbsp;  Name = "private2"<br>
+                                    &nbsp;  }<br>
+                              }<br>
+    
+                        </code>
+                    </div> <br> <br> <br>
 
         </div>
 
