@@ -59,21 +59,37 @@
                 <div class="code_sections">
                     <code>
                         
-                        resource "aws_instance" "private1" { <br>
+                        resource "aws_instance" "public1" { <br>
                             ami               = "ami-042e8287309f5df03"<br>
                             instance_type     = "t2.micro"<br>
-                            subnet_id         = aws_subnet.private2.id<br>
-                            security_groups   = [aws_security_group.first.id]<br>
+                            subnet_id   = aws_subnet. public_subnet1.id<br>
+                            security_groups   = [aws_security_group.main_security_group.id]<br>
                             availability_zone = "us-east-1c"<br><br>
                             &nbsp; tags = {<br>
-                            	&nbsp;	&nbsp;  Name = "private1"<br>
+                            	&nbsp;	&nbsp;  Name = "public1"<br>
                                 &nbsp;  }<br>
                           }<br>
 
                     </code>
                 </div> <br>
 
-                    <p>Repeated the same steps for the following instance with a different variable name, tag name, subnets, and availability zones.  </p>
+                    <p>Repeated the same steps for the following instance with a different variable name, tag name, subnets, and availability zones.  </p><br>
+                    <div class="code_sections">
+                        <code>
+                            
+                            resource "aws_instance" "public2" { <br>
+                                ami               = "ami-042e8287309f5df03"<br>
+                                instance_type     = "t2.micro"<br>
+                                subnet_id   = aws_subnet. public_subnet2.id<br>
+                                security_groups   = [aws_security_group.main_security_group.id]<br>
+                                availability_zone = "us-east-1c"<br><br>
+                                &nbsp; tags = {<br>
+                                    &nbsp;	&nbsp;  Name = "public2"<br>
+                                    &nbsp;  }<br>
+                              }<br>
+    
+                        </code>
+                    </div> <br>
 
         </div>
 
