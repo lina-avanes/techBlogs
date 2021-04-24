@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_Blog1.css">
+    <title>Blog 1</title>
+</head>
+<style>
+.blog8-div{
+    margin: auto;
+    width: 50%;
+    min-width: 400px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background: rgb(175, 135, 173);
+    padding: 30px;
+}
+
+
+.code_sections{
+    width: 400px;
+    background: rgb(231, 231, 231);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 20px
+
+}
+
+
+</style>
+<body>
+    
+    <div class="nav-bar">
+        <ul>
+            <li><a href="index.html"> Home </a></li>
+            <li><a href="about.html"> About </a></li>
+            <li><a href="https://github.com/lina-avanes/techBlogs"> Github </a></li>
+        </ul>
+    </div> <br><br>
+    
+
+    <div class="blog8-div">
+        <strong id="title">Creation of EC2 Instances – part 6  </strong>
+        <p>EC2 instances are a major part of this infrastructure. There will be a total of 4 instances. Two public and two private. 
+            The public instances will be located in the public subnets and the private instances will be located in private subnets.</p>
+
+            <p ><strong style="color: rgb(33, 10, 75); font-size: 20px;">EC2 Creation via Terraform </strong> <br>
+                    <p>The resource “aws_instance” will be used to create an EC2 instance. "private1" will be the variable name. The ami is "ami-042e8287309f5df03".
+                         The ami identifier can be found on the aws console. Navigate to console.aws.amazon.com > EC2 > Lunch Instance to see all the available EC2s.
+                          The instance type which is “instance_type     = "t2.micro" ” will also be found there. “subnet_id   = aws_subnet. public_subnet1.id” will 
+                          be used to attach the instance to the correct subnet. In this case, the EC2 instance will be attached to “public_subnet1”. This subnet was 
+                          created in <a href="blog4.html">blog 4</a>. Next, security_groups   = [aws_security_group. main_security_group.id] will be used to attach a security group to the 
+                          instance. In order to see how “main_security_group” was created, visit  <a href="blog7.html">blog 7</a>. Finally, declare the correct availability zone by using 
+                          “availability_zone = "us-east-1c" ”. Tags are optional. </p>
+
+                <div class="code_sections">
+                    <code>
+                        
+                        resource "aws_instance" "private1" { <br>
+                            ami               = "ami-042e8287309f5df03"<br>
+                            instance_type     = "t2.micro"<br>
+                            subnet_id         = aws_subnet.private2.id<br>
+                            security_groups   = [aws_security_group.first.id]<br>
+                            availability_zone = "us-east-1c"<br><br>
+                            &nbsp; tags = {<br>
+                            	&nbsp;	&nbsp;  Name = "private1"<br>
+                                &nbsp;  }<br>
+                          }<br>
+
+                    </code>
+                </div> <br>
+
+                    <p>Repeated the same steps for the following instance with a different variable name, tag name, subnets, and availability zones.  </p>
+
+        </div>
+
+</body>
+</html>
