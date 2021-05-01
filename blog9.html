@@ -53,6 +53,10 @@
      
 
               <p ><strong style="color: rgb(33, 10, 75); font-size: 15px;">ELB Terraform </strong> <br>
+                <p>In order to use the elastic load balancer, the resource “aws_elb” must be used. Then the appropriate security group 
+                    must be attached to the elb. The name of the security group is “main_security_group”. This security group
+                     was created back in blog 7. Next, the elb will be attached to the ngw and ngw2 subnets. Then add a listener
+                      and a healthcheck block. The final step would be to provide a list of instance ids to place in the ELB pool.</p>
 
 
                 <div class="code_sections">
