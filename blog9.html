@@ -51,6 +51,52 @@
              zones. The reason for that is to make sure the website stays live, in case something goes
               wrong with one of the EC2 instances where the website is being hosted from.</p>
      
+
+              <p ><strong style="color: rgb(33, 10, 75); font-size: 15px;">ELB Terraform </strong> <br>
+
+
+                <div class="code_sections">
+                    <code>
+                        
+                        resource "aws_elb" "runcmd" {<br><br>
+                            name               = "elb"<br>
+                            security_groups    = [aws_security_group.first.id]<br>
+                            subnets            = [aws_subnet.ngw.id, aws_subnet.ngw2.id]<br>
+                          
+                            listener {<br>
+                              instance_port     = 80<br>
+                              instance_protocol = "http"<br>
+                              lb_port           = 80<br>
+                              lb_protocol   <br>    = "http"<br>
+                            }
+                            <br><br>
+                        
+                          
+                            health_check {<br>
+                              healthy_threshold   = 2<br>
+                              unhealthy_threshold = 2<br>
+                              timeout             = 3<br>
+                              target              = "HTTP:80/"<br>
+                              interval            = 30<br>
+                            }<br><br>
+                          
+                            instances                   = [aws_instance.pri_1.id, aws_instance.pri_2.id]<br>
+                            cross_zone_load_balancing   = true<br>
+                            idle_timeout                = 400<br>
+                            connection_draining         = true<br>
+                            connection_draining_timeout = 400<br><br>
+                          
+                            tags = {<br>
+                              Name = "new_elb"<br>
+                            }<br>
+                          }
+
+                    </code>
+                </div> <br>
+
+
+
+
         </div>
 
 </body>
