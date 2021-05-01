@@ -51,7 +51,7 @@ a {
 }
 
 
-#blog_Box_Style0, #blog_Box_Style1, #blog_Box_Style2,#blog_Box_Style3,#blog_Box_Style4,#blog_Box_Style5, #blog_Box_Style6, #blog_Box_Style7, #blog_Box_Style8{
+#blog_Box_Style0, #blog_Box_Style1, #blog_Box_Style2,#blog_Box_Style3,#blog_Box_Style4,#blog_Box_Style5, #blog_Box_Style6, #blog_Box_Style7, #blog_Box_Style8,#blog_Box_Style9{
    /* box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);*/
 
     box-shadow: 0 2px 4px rgb(207, 170, 207), 0 8px 16px rgb(236, 134, 219);
@@ -123,6 +123,14 @@ background-color:rgb(106, 209, 178)
   box-shadow: 0 2px 4px rgb(212, 160, 233), 0 8px 16px rgb(204, 81, 204);
 
   background-color:rgb(162, 121, 182)
+  
+
+}
+
+#blog_Box_Style9{
+  box-shadow: 0 2px 4px rgb(160, 192, 233), 0 8px 16px rgb(115, 154, 185);
+
+  background-color:rgb(93, 190, 214)
   
 
 }
