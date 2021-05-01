@@ -60,7 +60,7 @@
                         
                         resource "aws_elb" "runcmd" {<br><br>
                             name               = "elb"<br>
-                            security_groups    = [aws_security_group.first.id]<br>
+                            security_groups    = [aws_security_group.main_security_group.id]<br>
                             subnets            = [aws_subnet.ngw.id, aws_subnet.ngw2.id]<br>
                           
                             listener {<br>
