@@ -66,7 +66,7 @@
             </code>
         </div> <br>
 
-        <p>Next, the resource “aws_route53_record” will be used to add an A type DNS record.the line “zone_id = aws_route53_zone.runcmd.zone_id” will attach the zone ID
+        <p>Next, the resource “aws_route53_record” will be used to add an A type DNS record. The line “zone_id = aws_route53_zone.runcmd.zone_id” will attach the zone ID
              created in the first part to this record. The name will be the same which is “runcmd-fitness.com” and type will be “A”. Then the “aws_elb” or the elastic load balancer
               will be attached to the zone and the dns name.    </p> 
               
