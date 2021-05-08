@@ -52,7 +52,19 @@
          to a traditional DNS zone file; it represents a collection of records that can be managed together, belonging to
           a single parent domain name. My domain name is runcmd-fitness.com; therefore, i will assign the name "runcmd-fitness.com" to the zone. Tags are optional.</p>
 
+          <div class="code_sections">
+            <code>
+                
+                resource "aws_route53_zone" "runcmd" { <br>
+                    name = "runcmd-fitness.com" <br> <br>
+                  
+                    tags = { <br>
+                      Environment = "runcmd" <br>
+                      &nbsp; } <br>
+                  } <br>
 
+            </code>
+        </div> <br>
                 <button style="background-color: aliceblue;"><a href="index.html"> Go Back </a></button>
                 <button style="background-color: aliceblue;"><a href="blog6.html"> Top</a></button>
         </div>
